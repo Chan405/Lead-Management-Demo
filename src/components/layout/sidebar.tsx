@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { WORKSPACE } from "@/lib/demo";
-import { NAV_ITEMS } from "@/lib/navigation";
+import { DASHBOARD_HREF, NAV_ITEMS } from "@/lib/navigation";
 import { cn } from "@/lib/cn";
 import {
   IconCustomers,
@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/icons";
 
 const ICONS = {
-  "/": IconDashboard,
+  "/dashboard": IconDashboard,
   "/leads": IconLeads,
   "/customers": IconCustomers,
   "/reports": IconReports,
@@ -38,7 +38,7 @@ export function Sidebar({
       )}
     >
       <div className="px-5 py-5">
-        <Link href="/" className="flex items-center gap-3" onClick={onNavigate}>
+        <Link href={DASHBOARD_HREF} className="flex items-center gap-3" onClick={onNavigate}>
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent font-display text-lg text-accent-foreground">
             L
           </span>
@@ -48,6 +48,13 @@ export function Sidebar({
             </span>
             <span className="mt-1 block text-xs text-muted">{WORKSPACE.company}</span>
           </span>
+        </Link>
+        <Link
+          href="/"
+          onClick={onNavigate}
+          className="mt-4 inline-flex text-sm font-medium text-accent hover:underline"
+        >
+          Back to overview
         </Link>
       </div>
 

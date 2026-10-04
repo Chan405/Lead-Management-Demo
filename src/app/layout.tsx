@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Geist } from "next/font/google";
 import { LeadsProvider } from "@/components/leads/leads-context";
-import { AppShell } from "@/components/layout/app-shell";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,7 +18,8 @@ export const metadata: Metadata = {
     default: "LeadFlow",
     template: "%s · LeadFlow",
   },
-  description: "Keep your leads, follow-ups, and customer information in one place.",
+  description:
+    "Keep leads, customer information, follow-ups, and sales opportunities in one simple dashboard.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -29,9 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-background font-sans text-foreground">
-        <LeadsProvider>
-          <AppShell>{children}</AppShell>
-        </LeadsProvider>
+        <LeadsProvider>{children}</LeadsProvider>
       </body>
     </html>
   );

@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { DashboardView } from "@/components/dashboard/dashboard-view";
+import { OverviewPage } from "@/components/marketing/overview-page";
 
 export const metadata: Metadata = {
-  title: "Dashboard",
+  title: "Manage your leads",
+  description:
+    "Keep leads, customer information, follow-ups, and sales opportunities in one simple dashboard.",
 };
 
-export default function DashboardPage() {
-  return <DashboardView />;
+export default function HomePage() {
+  return <OverviewPage />;
 }

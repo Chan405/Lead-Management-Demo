@@ -62,6 +62,13 @@ export function TopBar({
         <h1 className="min-w-0 flex-1 truncate text-base font-semibold tracking-tight sm:flex-none sm:text-lg">
           {title}
         </h1>
+        <Link
+          href="/"
+          className="shrink-0 text-sm font-medium text-muted hover:text-foreground"
+        >
+          <span className="sm:hidden">Overview</span>
+          <span className="hidden sm:inline">Back to overview</span>
+        </Link>
         <div className="order-last w-full sm:order-none sm:w-auto sm:min-w-0 sm:flex-1">
           <label className="relative mx-auto block sm:max-w-md">
             <span className="sr-only">Search leads</span>
